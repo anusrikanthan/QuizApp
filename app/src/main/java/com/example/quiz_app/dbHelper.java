@@ -23,6 +23,7 @@ public class dbHelper extends SQLiteOpenHelper {
     public static final String CONTACTS_COLUMN_DEGREE = "degree";
     public static final String CONTACTS_COLUMN_PHONE = "phone";
     public static final String CONTACTS_COLUMN_PASSWORD = "password";
+    public static final String CONTACTS_COLUMN_isFaculty = "isFaculty";
     private HashMap hp;
 
     public dbHelper(Context context) {
@@ -35,7 +36,7 @@ public class dbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(
                 "create table student " +
-                        "(email text primary key, name text,phone text,degree text,branch text,password text)"
+                        "(email text primary key, name text,phone text,degree text,branch text,password text,isFaculty text)"
         );
 
     }
@@ -49,7 +50,11 @@ public class dbHelper extends SQLiteOpenHelper {
         contentValues.put("degree","B-Tech");
         contentValues.put("branch","CSE");
 
+
         contentValues.put("password","anu");
+        contentValues.put("isFaculty","0");
+
+
         db.insert("student", null, contentValues);
         contentValues.put("email", "balaji@ymail.com");
         contentValues.put("name", "Balaji Sundar");
@@ -58,6 +63,8 @@ public class dbHelper extends SQLiteOpenHelper {
         contentValues.put("branch","CSE");
 
         contentValues.put("password","balaji2k.");
+        contentValues.put("isFaculty","0");
+
         db.insert("student", null, contentValues);
 
         contentValues.put("email", "mani@gmail.com");
@@ -67,6 +74,8 @@ public class dbHelper extends SQLiteOpenHelper {
         contentValues.put("branch","CSE");
 
         contentValues.put("password","manika");
+        contentValues.put("isFaculty","0");
+
         db.insert("student", null, contentValues);
 
 
@@ -78,7 +87,7 @@ public class dbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertDetails (String name, String phone, String email, String degree,String branch,String password)
+    public boolean insertDetails (String name, String phone, String email, String degree,String branch,String password,String isFaculty)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -155,8 +164,30 @@ public class dbHelper extends SQLiteOpenHelper {
 
         if (pwd.equals(pass)) {
             Log.d("Editable", "append: " + pass);
+
             return true;
-        } else return false;
+
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+    public String faculty_check(String email,String pwd)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String fac="";
+        Cursor c = db.rawQuery("SELECT * FROM student WHERE email='" + email + "'", null);
+        Log.d("Editable", "Cursor Length: " + c.moveToFirst());
+        if (c.moveToFirst()) {
+             fac= c.getString(6);
+            Log.d("Editable", "append: " + fac);
+
+        }
+        c.close();
+        return fac;
 
     }
 }

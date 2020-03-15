@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.util.Log;
 import android.widget.Toast;
@@ -27,23 +29,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button b1,b2;
     dbHelper dh;
 
+
+    private RadioGroup radioSexGroup;
+    private RadioButton radioSexButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-       t1=findViewById(R.id.fpw);
-      t1.setText(R.string.your_string);
+       //t1=findViewById(R.id.fpw);
+     // t1.setText(R.string.your_string);
       et1=findViewById(R.id.email);
       et2=findViewById(R.id.password);
-      t1.setOnClickListener(this);
+
       b1=findViewById(R.id.login);
 
       b1.setOnClickListener(this);
 
      dh=new dbHelper(this);
-
-      dh.insertvalues();
+       dh.insertvalues();
+      radioSexGroup=findViewById(R.id.radioGroup);
 
 
     }
@@ -51,71 +56,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v)
     {
-        if(v.getId()==t1.getId())
-        {
-            if(!(et1.getText().toString().equals("")))
-            {
-                if(dh.getifValidEmail(et1.getText().toString()))
-                {
-                    Intent i=new Intent(this,forpw.class);
-                    startActivity(i);
-                }
-                else
-                {
-                       AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-                    // Setting Dialog Title
-                    alertDialog.setTitle("No Such Account  Exist");
-                    // Setting Dialog Message
 
-                    alertDialog.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    });
-
-                    alertDialog.show();
-                }
-            }
-            else
-            {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-                // Setting Dialog Title
-                alertDialog.setTitle("No Such Account Exist");
-                // Setting Dialog Message
-
-                alertDialog.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-
-                alertDialog.show();
-            }
-
-        }
-        else if(b1.getId()==v.getId())
+        if(b1.getId()==v.getId())
         {
             boolean t1=dh.login(et1.getText().toString(),et2.getText().toString());
             String a;
-            if(t1)
-            {
-                a="T";
-            }
-            else {
-                a = "F";
-            }
+
 
             if( !(dh.login(et1.getText().toString(),et2.getText().toString())) ||(et1.getText().toString().equals(""))|| (et2.getText().toString().equals("")))
             {
-                  if(et1.getText().toString().equals("admin@gmail.com")&&et2.getText().toString().equals("password"))
-                  {
-                      Intent i=new Intent(this,admin_dashboard.class);
-                      startActivity(i);
-                  }
-                  else
-                  {
+
                       AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
                       // Setting Dialog Title
                       alertDialog.setTitle("Invalid Credentials");
@@ -130,24 +80,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                       alertDialog.show();
 
-                  }
+
 
 
             }
             else
-            {  Toast.makeText(getApplicationContext(),"Logging in..",Toast.LENGTH_SHORT).show();
+            {
+                int selectedId=radioSexGroup.getCheckedRadioButtonId();
+                radioSexButton=(RadioButton)findViewById(selectedId);
 
-                SharedPreferences sp = getSharedPreferences("mycredentials",
-                        Context.MODE_PRIVATE);
-                SharedPreferences.Editor edit = sp.edit();
-                edit.putString("Email",et1.getText().toString());
-                edit.commit();
+                if(dh.faculty_check(et1.getText().toString(),et2.getText().toString()).equals("0") && radioSexButton.getText().toString().equals("Student") )
+                {
+                    Toast.makeText(getApplicationContext(),"Logging in..",Toast.LENGTH_SHORT).show();
 
-                Intent i= new Intent(this,Signup.class);
-            startActivity(i);
+                    SharedPreferences sp = getSharedPreferences("mycredentials",
+                            Context.MODE_PRIVATE);
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putString("Email",et1.getText().toString());
+                    edit.commit();
+
+                    Intent i= new Intent(this,Signup.class);
+                    startActivity(i);
+                }
+                else if(dh.faculty_check(et1.getText().toString(),et2.getText().toString()).equals("1") && radioSexButton.getText().toString().equals("Admin"))
+                {
+                    Toast.makeText(getApplicationContext(),"Logging in..",Toast.LENGTH_SHORT).show();
+
+
+                    Intent i= new Intent(this,admin_dashboard.class);
+                    startActivity(i);
+                }
+
+
             }
         }
 
     }
 }
-;

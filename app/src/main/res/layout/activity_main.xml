@@ -15,6 +15,7 @@
 
 
     <LinearLayout
+        android:id="@+id/innerLayout"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="@drawable/layout_bg"
@@ -22,6 +23,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/mainLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -61,28 +63,49 @@
             android:background="@drawable/roundedbutton"
             android:hint="Login"></Button>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
 
-    </LinearLayout>
 
 
-        <TextView
 
-            android:id="@+id/fpw"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="30dp"
-            android:textAllCaps="false"
-            android:textColor="@color/colorAccent">
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="58dp"
 
-        </TextView>
+            android:id="@+id/radioGroup"
+           >
 
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Faculty"
+                android:id="@+id/radioButton"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Admin"
+                android:id="@+id/radioButton2"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="15dp"
+                android:layout_weight="0.13" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Student"
+                android:id="@+id/radioButton3"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="15dp"
+                android:layout_weight="0.13" />
+
+        </RadioGroup>
 
     </LinearLayout>
 
