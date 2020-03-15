@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Signup"
+    android:background="@drawable/bg"
+    android:layout_gravity="center"
+
+    android:padding="30dp"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:background="@drawable/layout_bg"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp" android:text="Student Profile"
+            android:textColor="#000000"
+            android:textSize="35dp"
+            app:fontFamily="@font/roboto_thin"></TextView>
+<LinearLayout
+    android:layout_width="340dp"
+    android:layout_height="100dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:text="Name"
+        android:textAllCaps="false"></TextView>
+
+   <TextView
+
+       android:id="@+id/namedisp"
+       android:textAlignment="center"
+       android:layout_width="220dp"
+       android:layout_height="25dp"
+       android:layout_marginLeft="45dp"
+       android:layout_marginTop="50dp"
+
+       android:background="@drawable/textviewrounded"></TextView>
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+
+                android:text="E-Mail"
+                android:textAllCaps="false"></TextView>
+
+            <TextView
+
+                android:layout_width="220dp"
+                android:layout_height="25dp"
+
+                android:layout_marginLeft="45dp"
+                android:id="@+id/emaildisp"
+                 android:textAlignment="center"
+                android:background="@drawable/textviewrounded"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+
+                android:text="Degree"
+                android:textAllCaps="false"></TextView>
+
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_marginLeft="45dp"
+                android:id="@+id/degdisp"
+                android:background="@drawable/textviewrounded"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+
+                android:text="Branch"
+                android:textAllCaps="false"></TextView>
+
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                android:layout_marginLeft="45dp"
+                android:id="@+id/branchdisp"
+                android:background="@drawable/textviewrounded"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+
+                android:text="Phone No"
+                android:textAllCaps="false"></TextView>
+
+            <TextView
+                android:layout_width="220dp"
+                android:textAlignment="center"
+                android:layout_height="25dp"
+                android:layout_marginLeft="30dp"
+                android:id="@+id/phdisp"
+                android:background="@drawable/textviewrounded"></TextView>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="35dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/login1"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/roundedbutton"
+                android:hint="Quiz\nDashboard"></Button>
+            <Button
+                android:id="@+id/editprof"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/roundedbutton"
+                android:hint="Edit Profile"></Button>
+        </LinearLayout>
+
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+
+
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/roundedbutton"
+                android:hint="Logout"></Button>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

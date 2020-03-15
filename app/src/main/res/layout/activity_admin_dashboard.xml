@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Signup"
+    android:background="@drawable/bg"
+    android:layout_gravity="center"
+
+    android:padding="30dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/layout_bg"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Welcome Admin"
+            android:textColor="#000000"
+            android:textSize="35dp"
+            android:layout_marginTop="30dp"
+            app:fontFamily="@font/roboto_thin"></TextView>
+
+        <Button
+            android:id="@+id/addclass"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+
+             android:layout_gravity="center"
+            android:layout_marginTop="85dp"
+            android:background="@drawable/roundedbutton"
+            android:hint="Add Course"></Button>
+        <Spinner
+        android:id="@+id/assignclass"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:text="Add Details"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/roundedbutton"
+        android:hint="Assign Course">
+
+
+
+    </Spinner>
+
+        <Spinner
+            android:id="@+id/assignfaculty"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:text="Add Details"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/roundedbutton"
+            android:hint="Assign Faculty">
+
+
+
+        </Spinner>
+
+
+
+
+
+    </LinearLayout>
+</LinearLayout>

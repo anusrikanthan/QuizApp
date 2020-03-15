@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "128985238403",
+    "firebase_url": "https://quiz-app-anu.firebaseio.com",
+    "project_id": "quiz-app-anu",
+    "storage_bucket": "quiz-app-anu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128985238403:android:58a84ef9cafeacb4f284b6",
+        "android_client_info": {
+          "package_name": "com.example.quiz_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128985238403-gtj1uc1hr28qu26tkpi3frh1gh3fr70i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeIYwMfL2u2qVAASm7z8sDFGwvTLAkRp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128985238403-gtj1uc1hr28qu26tkpi3frh1gh3fr70i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

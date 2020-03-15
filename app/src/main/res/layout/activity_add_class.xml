@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Signup"
+    android:background="@drawable/bg"
+    android:layout_gravity="center"
+
+    android:padding="30dp"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:background="@drawable/layout_bg"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp" android:text="Add Course"
+            android:textColor="#000000"
+            android:textSize="35dp"
+            app:fontFamily="@font/roboto_thin"></TextView>
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="50dp"
+                android:paddingTop="15dp"
+                android:text="Course Name"
+                android:textAllCaps="false"></TextView>
+
+            <EditText
+                android:id="@+id/CourseName"
+                android:layout_width="150dp"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/textviewrounded"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:paddingTop="15dp"
+                android:text="Course Code"
+                android:textAllCaps="false"></TextView>
+
+            <EditText
+
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/CourseCode"
+                android:textAlignment="center"
+                android:background="@drawable/textviewrounded"></EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:paddingTop="15dp"
+                android:text="Course Mentor"
+                android:textAllCaps="false"></TextView>
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/CourseMentor"
+                android:textAlignment="center"
+                android:background="@drawable/textviewrounded"></EditText>
+        </LinearLayout>
+
+        <Button
+           android:id="@+id/Update"
+            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/roundedbutton"
+            android:hint="Update"></Button>
+    </LinearLayout>
+</LinearLayout>
+
